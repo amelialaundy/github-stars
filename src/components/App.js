@@ -63,7 +63,7 @@ created in the last 30 days
               value={selectedLanguage}
               onChange={this.handleLanguageSelect.bind(this)}
             >
-              {this.languages.map(lang => <option value={lang} key={lang}>{lang}</option>)}
+              {languages.map(lang => <option value={lang} key={lang}>{lang}</option>)}
             </select>
             <input type="submit" value="Search" />
           </form>
