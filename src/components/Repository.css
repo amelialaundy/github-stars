@@ -1,0 +1,31 @@
+
+.Repository {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  /* align-items: center; */
+  font-size: calc(10px + 2vmin);
+  color: rgba(0, 0, 0, 0.54);
+  /* text-align:center; */
+  padding: 10px;
+
+}
+
+.Repository > p {
+  vertical-align:top;
+  float: left;
+  color: rgba(0, 0, 0, 0.54);
+}
+.stars {
+  text-align: center;
+  margin: auto;
+}
+
+.stars > p {
+  float: left;
+}
+.stars > svg {
+  float: left;
+  margin: 1em;
+}
