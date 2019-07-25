@@ -1,7 +1,8 @@
 import React from 'react';
-import logo from './logo.svg';
+import logo from '../logo.svg';
 import './App.css';
-import { getRepositories } from './services/github';
+import { getRepositories } from '../services/github';
+import { RepositoryList } from './repositoryList';
 
 export class App extends React.Component {
   languages = ["JavaScript", "Python", "Java", "C++", "Swift", "TypeScript", "Go", "SQL", "HTML", "CSS", "Ruby", "PHP"]
@@ -10,6 +11,7 @@ export class App extends React.Component {
     this.state = {
       loading: false,
       selectedLanguage: null,
+      repositories: []
     };
   }
 
@@ -28,8 +30,8 @@ export class App extends React.Component {
   render() {
     return <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Search the top 3 starred GitHub respositories by {this.state.selectedLanguage || 'language'}</p>
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
+        <p>Search the top 3 starred GitHub respositories by {this.state.selectedLanguage || "language"}</p>
         <form onSubmit={this.searchGithub.bind(this)}>
           <select
             id="language"
@@ -42,9 +44,13 @@ export class App extends React.Component {
           </select>
           <input type="submit" value="Search" />
         </form>
-
       </header>
+      <RepositoryList
+        repos={this.state.repositories}
+        >
+      </RepositoryList>
     </div>
+
   }
 }
 

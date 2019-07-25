@@ -3,5 +3,5 @@ export const getRepositories = async () => {
   const response = await fetch(url);
   console.log(response);
   const repositoriesData = await response.json();
-  return repositoriesData.items;
+  return repositoriesData.items.slice(0,2);
 }
